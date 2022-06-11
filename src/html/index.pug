@@ -23,6 +23,12 @@ block stylesheet
   link(rel="shortcut icon", href="imgs/logo.png", type="image/x-icon")
   //- Normalize Library
   link(rel="stylesheet", href="css/normalize.css")
+  //- Thuluth Font
+  link(rel="stylesheet", href="https://www.fontstatic.com/f=thuluth-decorated")
+  //- Cairo Font
+  link(rel="stylesheet", href="https://www.fontstatic.com/f=cairo-bold")
+  //- Fontawesome Library
+  link(rel="stylesheet", href="css/all.min.css")
   //- Bondi Style File
   link(rel="stylesheet", href="css/main.css")
 
@@ -32,6 +38,33 @@ block stylesheet
                                               In this a block for page content
   ====================================================================================================================
 block content 
+  //- ***************************************** Start Nav *****************************************
+  nav.navbar
+    .container
+      .logo الموعظة
+      ul.list-unstyled 
+        li.active(data-filter="")  الصفحة الرئيسية
+        li(data-filter="") الأحاديث
+        li(data-filter="") القرآن الكريم
+        li(data-filter="") أوقات الصلاة
+        li(data-filter="") تواصل معنـا
+      .menu-bars
+        i.fas.fa-bars
+  //- ***************************************** End Nav *****************************************
+
+  //- ***************************************** Start Header *****************************************
+  header 
+    .container 
+      .title 
+        h1
+          | مرحبـا بـك فــي
+          br
+          | موقـع المـوعظـة الإسلامــي
+        button.btn 
+          | إبـدأ التصفـح
+          i.fa-solid.fa-chevron-left
+  //- ***************************************** End Header *****************************************
+
   //- ***************************************** Start  *****************************************
   //- ***************************************** End  *****************************************
   
@@ -41,5 +74,7 @@ block content
   In this a block for add Js file for this page
   ====================================================================================================================
 block script
+  //- Fontawesome Library
+  script(src="script/all.min.js") 
   //- Main Javascript File
   script(src="script/script-min.js") 

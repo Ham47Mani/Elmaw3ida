@@ -1,6 +1,163 @@
 // ====================================== Start Global Rules ======================================
 //-------- Variables
+$main-color: white;
 
-* { box-sizing: border-box }
+* { box-sizing: border-box; outline: none }
+::-webkit-scrollbar { width: 0 }
+body {
+  font-family: "cairo-bold";
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+.container {
+  max-width: 1450px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative
+}
+section {
+  padding: 70px 0;
+}
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 // ====================================== End Global Rules ======================================
+
+// ====================================== Start nav ======================================
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: .5s ease-in-out;
+
+  //--- Container
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    color: $main-color;
+    transition: .5s all ease-in-out;
+  }
+  &.active {
+    background-color: transparentize(#323232, .4);
+    .container {
+      height: 80px;
+    }
+  }
+
+  //--- Logo
+  .logo {
+    font-family: "thuluth-decorated";
+    font-size: 45px;
+    cursor: pointer;
+  }
+
+  //--- Links
+  ul {
+    display: flex;
+    li {
+      position: relative;
+      cursor: pointer;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        right: 0;
+        background-color: $main-color;
+        width: 0;
+        height: 2px;
+        transition: .3s ease-in-out
+      }
+      &.active::after, &:hover::after {
+        width: 100%;
+      }
+      &:not(:last-of-type), &:not(:first-of-type) {
+        margin: 0 15px;
+      }
+    }
+  }
+
+  //--- Menu Bars
+  .menu-bars {
+    display: none;
+  }
+}
+// ====================================== End nav ======================================
+
+// ====================================== Start Header ======================================
+header {
+  background: url(../imgs/1.jpg) center center / cover no-repeat;
+  position: relative;
+  //---Overlay
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: transparentize(#323232, 0.7);
+  }
+
+  //- Container
+  .container {
+    min-height: 100vh;
+
+    //--- Title
+    .title {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $main-color;
+
+      //--- Main Heading
+      h1 {
+        line-height: 1.9;
+        font-size: 40px;
+        margin-bottom: 30px;
+      }
+
+      //--- Button
+      .btn {
+        padding: 10px 25px;
+        border: 2px solid $main-color;
+        background-color: transparent;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: 400;
+        color: inherit;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 0;
+          height: 100%;
+          z-index: -1;
+          background-color: $main-color;
+          transition: .3s ease-in-out;
+        }
+        &:hover {
+          color: #323232;
+          &::after {
+            width: 100%;
+          }
+        }
+        //--- Icon
+        svg {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+// ====================================== End Header ======================================
 
