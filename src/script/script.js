@@ -4,6 +4,17 @@ window.addEventListener("scroll", _ => {
   //- Add class active when scroll in page
   window.scrollY > 100 ? navbar.classList.add("active") : navbar.classList.remove("active");
 });
+
+const links = document.querySelectorAll("nav ul li");
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector("nav ul li.active").classList.remove("active");
+    link.classList.add("active");
+    document.querySelector(link.dataset.section.toString()).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
 //============================= End Navbar ====================================
 
 //============================= Start Header ====================================

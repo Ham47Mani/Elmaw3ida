@@ -43,11 +43,12 @@ block content
     .container
       .logo الموعظة
       ul.list-unstyled 
-        li.active(data-filter="")  الصفحة الرئيسية
-        li(data-filter="") الأحاديث
-        li(data-filter="") القرآن الكريم
-        li(data-filter="") أوقات الصلاة
-        li(data-filter="") تواصل معنـا
+        li.active(data-section="header")  الصفحة الرئيسية
+        li(data-section="#hadith") الأحاديث
+        li(data-section="#lecteurs") محاضـرات
+        li(data-section="header") القرآن الكريم
+        li(data-section="header") أوقات الصلاة
+        li(data-section="header") تواصل معنـا
       .menu-bars
         i.fas.fa-bars
   //- ***************************************** End Nav *****************************************
@@ -76,6 +77,49 @@ block content
           .numbers
           .next التالـي
   //- ***************************************** End Hadith *****************************************
+
+  //- ***************************************** Start Lecteurs *****************************************
+  section#lecteurs.lecteurs
+    .container 
+      h2.main-title محـاضـرات
+      .lecteur-container 
+        .content
+          //- Lecteur Box
+          .lec
+            .lec-text 
+              h4 قصة ذي القرنيين
+              p محاضرة رائـعة من تقديم الدكتور مبـروك زيـد الخيـر
+            img(src="imgs/sha.jpg", alt="مبروك زيد الخير")
+          //- Lecteur Box
+          .lec
+            .lec-text 
+              h4 قصة ذي القرنيين
+              p محاضرة رائـعة من تقديم الدكتور مبـروك زيـد الخيـر
+            img(src="imgs/sha.jpg", alt="مبروك زيد الخير")
+          //- Lecteur Box
+          .lec
+            .lec-text 
+              h4 قصة ذي القرنيين
+              p محاضرة رائـعة من تقديم الدكتور مبـروك زيـد الخيـر
+            img(src="imgs/sha.jpg", alt="مبروك زيد الخير")
+          //- Lecteur Box
+          .lec
+            .lec-text 
+              h4 قصة ذي القرنيين
+              p محاضرة رائـعة من تقديم الدكتور مبـروك زيـد الخيـر
+            img(src="imgs/sha.jpg", alt="مبروك زيد الخير")
+          //- Lecteur Box
+          .lec
+            .lec-text 
+              h4 قصة ذي القرنيين
+              p محاضرة رائـعة من تقديم الدكتور مبـروك زيـد الخيـر
+            img(src="imgs/sha.jpg", alt="مبروك زيد الخير")
+        //--- Video Box
+        .video
+          iframe(src="https://www.youtube.com/embed/DzIC8GV4M3M", frameborder="0")
+          p فوائد السفر الدكتور مبروك زيد الخير
+
+  //- ***************************************** End Lecteurs *****************************************
 
   //- ***************************************** Start  *****************************************
   //- ***************************************** End  *****************************************
