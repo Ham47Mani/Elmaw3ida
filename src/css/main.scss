@@ -380,6 +380,36 @@ header {
 }
 // ====================================== End Pray Time ======================================
 
+// ====================================== Start Footer ======================================
+footer {
+  position: relative;
+  svg {
+    fill: $main-color;
+    transform: translateY(5px);
+  }
+  .socials {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $main-color;
+    a {
+      margin: 15px;
+      font-size: 1.8rem;
+      color: $white;
+      transition: .2s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+
+      }
+    }
+  }
+}
+// ====================================== End Footer ======================================
+
 // ====================================== Start Popup ======================================
 .surahs-popup {
   position: fixed;
