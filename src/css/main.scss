@@ -141,7 +141,7 @@ header {
       //--- Main Heading
       h1 {
         line-height: 1.9;
-        font-size: 40px;
+        font-size: 3rem;
         margin-bottom: 30px;
       }
 
@@ -465,3 +465,84 @@ footer {
   }
 }
 // ====================================== End Popup ======================================
+
+// ====================================== Start Scroll To top ======================================
+.scrollbtn {
+  position: fixed;
+  bottom: -50px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-color;
+  color: $white;
+  cursor: pointer;
+  transition: .7s ease-in-out;
+  &.active {
+    bottom: 20px;
+  }
+}
+// ====================================== End Scroll To Top ======================================
+
+// ====================================== Start Responsive ======================================
+//- Small Screen
+@media (max-width: 767px) {
+  //------ Navbar
+  header .container .title h1 { font-size: 30px }
+
+  //------ Header
+  header .container .title .btn {
+    padding: 7px 10px;
+    font-size: 16px;
+  }
+
+  //------ Lectures
+  .lecteurs .lecteur-container .content .lec .lec-text h4 { font-size: 16px }
+  .lecteurs .lecteur-container .content .lec .lec-text p { font-size: 14px }
+}
+
+//- Medium Screen
+@media (max-width: 991px) {
+  //------ Navbar
+  nav {
+    ul {
+      position: fixed;
+      left: 0;
+      top: 55px;
+      width: 100%;
+      background-color: transparentize($dark, 0.4);
+      flex-direction: column;
+      padding: 15px 0 !important;
+      text-align: center;
+      z-index: 99;
+      transform: translateX(100%);
+      transition: transform .7s ease-in-out;
+
+      &.active {
+        transform: translateX(0);
+      }
+
+      li {
+        padding: 5px 0;
+        &:not(:last-of-type) {
+          margin-bottom: 15px !important;
+        }
+      }
+    }
+    .menu-bars {
+      display: block;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+  }
+
+  //------ Leactures
+  .lecteurs .lecteur-container .content, 
+  .lecteurs .lecteur-container .video { width: 98% }
+}
+// ====================================== End Responsive ======================================
+

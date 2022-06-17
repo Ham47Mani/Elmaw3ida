@@ -1,8 +1,13 @@
 //============================= Start Navbar ====================================
 let navbar = document.querySelector("nav");
+let scrollBtn = document.querySelector(".scrollbtn");
+
 window.addEventListener("scroll", _ => {
   //- Add class active when scroll in page
   window.scrollY > 100 ? navbar.classList.add("active") : navbar.classList.remove("active");
+
+  //- Show or hide scroll to top button
+  (window.scrollY > 500) ? scrollBtn.classList.add("active") : scrollBtn.classList.remove("active");
 });
 
 const links = document.querySelectorAll("nav ul li");
@@ -13,12 +18,27 @@ links.forEach(link => {
     document.querySelector(link.dataset.section.toString()).scrollIntoView({
       behavior: "smooth"
     });
+    //- Remove class active from ul
+    document.querySelector("nav ul").classList.remove("active");  
   });
 });
 
 //- Logo click event
 document.querySelector("nav .logo").addEventListener("click", _ => {
   document.querySelector("header").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
+//- Menu bars
+document.querySelector(".menu-bars").addEventListener("click", () => {
+  document.querySelector("nav ul").classList.toggle("active");
+});
+
+//- Scroll to top
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
     behavior: "smooth"
   });
 });
