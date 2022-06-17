@@ -3,6 +3,7 @@
 $white: white;
 $main-color: #43a047;
 $dark: #323232;
+$box-shadow: 0 0 5px rgba(76, 175, 88, .4);
 
 * { box-sizing: border-box; outline: none }
 ::-webkit-scrollbar { width: 0 }
@@ -284,4 +285,97 @@ header {
   }
 }
 // ====================================== End Lecteurs ======================================
+
+// ====================================== Start Quran ======================================
+.quran {
+  //--- Surah Container
+  .surahs-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    //--- Surah Box
+    .surah {
+      max-height: 100px;
+      min-width: 150px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      cursor: pointer;
+      transition: .3s ease-in-out;
+      color: $dark;
+      font-size: 1.2rem;
+      &:hover {
+        transform: scale(1.05);
+        font-weight: bold;
+        box-shadow: 0 0 5px transparentize($main-color, .5);
+      }
+      p {
+        margin: 5px;
+        font-family: "arial";
+      }
+    }
+  }
+}
+// ====================================== End Quran ======================================
+
+// ====================================== Start Popup ======================================
+.surahs-popup {
+  position: fixed;
+  inset: 0;
+  background-color: $white;
+  z-index: 2;
+  overflow-y: scroll;
+  transform: translateX(100%);
+  transition: .5s ease-in-out;
+  
+  &.active {
+    transform: translateX(0);
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+    background-color: $white;
+  }
+  &::-webkit-scrollbar-thumb { 
+    background-color: $main-color;
+    border-radius: 2px;
+  }
+
+  //--- Close popup
+  .close-popup {
+    position: sticky;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: $dark;
+    cursor: pointer;
+  }
+
+  //--- Ayat container
+  .ayats {
+    padding: 20px;
+    width: calc(100% - 40px);
+    margin-right: 40px;
+    margin-top: 20px;
+    color: $dark;
+    text-align: center;
+    p {
+      border-bottom: 2px solid $main-color;
+      line-height: 2;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}
+// ====================================== End Popup ======================================
 

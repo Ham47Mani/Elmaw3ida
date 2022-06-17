@@ -15,6 +15,13 @@ links.forEach(link => {
     });
   });
 });
+
+//- Logo click event
+document.querySelector("nav .logo").addEventListener("click", _ => {
+  document.querySelector("header").scrollIntoView({
+    behavior: "smooth"
+  });
+});
 //============================= End Navbar ====================================
 
 //============================= Start Header ====================================
@@ -64,3 +71,59 @@ function hadithWrite (hadith) {
   numbers.innerText = `300 - ${hadithIndex + 1}`;
 }
 //============================= End Hadith ====================================
+
+//============================= Start Quran ====================================
+let surahsContainer = document.querySelector(".quran .surahs-container");
+getSurahs();
+
+///- getSurahs function
+function getSurahs () {
+  surahsContainer.innerHTML = ``;
+  //- Fetch surahs meta data {Name of surahs}
+  fetch("http://api.alquran.cloud/v1/meta")
+  .then(response => response.json())
+  .then(response => {
+    let surahs = response.data.surahs.references;
+    let numberOfSurahs = response.data.surahs.count;
+    for (let i = 0; i < numberOfSurahs; i++) {
+      surahsContainer.innerHTML += `
+        <div class="surah">
+          <p>${surahs[i].name}</p>
+          <p>${surahs[i].englishName}</p>
+        </div>
+      `;
+    }
+
+    //-------------------- Ayat Surahs ----------------------------------------
+    let surahsTitles = document.querySelectorAll(".quran .surah");
+    const popup = document.querySelector(".surahs-popup"),
+          popupClose = document.querySelector(".surahs-popup .close-popup"),
+          popupAyats = document.querySelector(".surahs-popup .ayats");
+    
+    //- Fetch ayats of any surah titles & add an event listener
+    surahsTitles.forEach((surahTitle, index) => {
+      surahTitle.addEventListener("click", () => {
+        fetch(`https://api.alquran.cloud/v1/surah/${index + 1}`)
+        .then(response => response.json())
+        .then(response => {
+          popupAyats.innerHTML = ``;
+          let ayahs = response.data.ayahs;
+
+          ayahs.forEach(ayah => {
+            popup.classList.add("active");
+            popupAyats.innerHTML += `
+              <p>${ayah.text} - {${ayah.numberInSurah}}</p>
+            `;
+          });
+        });
+      });
+    });
+
+    //- Close Popup
+    popupClose.addEventListener("click", () => {
+      popup.classList.remove("active");
+    });
+  });
+
+}
+//============================= End Quran ====================================
