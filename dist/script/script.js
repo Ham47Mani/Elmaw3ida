@@ -127,3 +127,30 @@ function getSurahs () {
 
 }
 //============================= End Quran ====================================
+
+//============================= Start Pray Time ====================================
+let cards = document.querySelector(".pray .cards");
+getPrayTime();
+
+//--- getPrayTime function
+function getPrayTime () {
+  fetch("https://api.aladhan.com/v1/timingsByCity?city=Ghardaia&country=Algeria&method=8")
+  .then(response => response.json())
+  .then(response => {
+    let times = response.data.timings;
+    cards.innerHTML = ``;
+    for (let time in times) {
+      cards.innerHTML += `
+        <div class="card">
+            <div class="circle"><svg>
+                    <circle cx="100" cy="100" r="100"></circle>
+                </svg>
+                <div class="pray-time">${times[time]}</div>
+            </div>
+            <p>${time}</p>
+        </div>
+      `;
+    }
+  });
+}
+//============================= End Pray Time ====================================
