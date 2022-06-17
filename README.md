@@ -1,5 +1,5 @@
 <!--
- * Template Name      : HCoding
+ * Template Name      : الموعظة
  * Template Version   : V 1.0.0
  * Template Url       : .....................
  * Language           : Pug, SASS, Javascript, GulpJs 
@@ -13,20 +13,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://ham47mani.github.io/HCoding/">
+  <a href="https://ham47mani.github.io/Elmaw3ida/">
     <img src="dist/imgs/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h1 align="center">HCoding - Creative & Simple Template</h1>
+  <h1 align="center">الموعظة - موقع اسلامي</h1>
 
   <p align="center">
-    HCoding is a simple template for practice with boostrap 5 ,SASS and PUG
+    الموعظة هو موقع اسلامي من صصحة واحدة يحتوى على القرآن الكريم كاملا بالإضافة الى 300 حديث, إضافة لمواقيت الصلوات بتوقيت مدينة غرداية في الجزائر
     <br />
-    <a href="https://ham47mani.github.io/HCoding/">View Demo</a>
+    <a href="https://ham47mani.github.io/Elmaw3ida/">View Demo</a>
     ·
-    <a href="https://github.com/Ham47Mani/HCoding/issues">Report Bug</a>
+    <a href="https://github.com/Ham47Mani/Elmaw3ida/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Ham47Mani/HCoding/issues">Request Feature</a>
+    <a href="https://github.com/Ham47Mani/Elmaw3ida/issues">Request Feature</a>
   </p>
 </p>
 
@@ -73,10 +73,7 @@ I use i this template :
 * Task runner (Gulp js)
 
 ## CSS & JS Library
-* Bootstrap 5
-* AOS Animation
-* LightGallery CSS
-* ScrollOut
+* No library
 
 <!-- CONTACT -->
 ## Contact
